@@ -49,6 +49,27 @@ button {
 button:hover {
   border-color: #646cff;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  border: #ffffff solid 0.4rem;
+}
+
+nav section {
+  
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+main section {
+  border: #747bff solid 0.5rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
