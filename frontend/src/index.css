@@ -1,89 +1,163 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+body, h1, h2, h3, p, a, section, nav, input, button {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body and Container Styles */
+body {
+  background-color: #f2f2f2;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-
+/* Navigasjon Bar Styles */
 nav {
+  background-color: #d32f2f; /* Pokedex red */
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  border: #ffffff solid 0.4rem;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 nav section {
-  
-  margin: 1rem;
-  padding: 1rem;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Main Content Stil */
+main {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+main h1, main h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+main img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 main section {
-  border: #747bff solid 0.5rem;
-  margin: 1rem;
-  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+main section img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+main section p, main section h2, main section h3 {
+  margin: 5px 0;
+}
+
+main section h2 a, main section h3 a {
+  text-decoration: none;
+  color: #d32f2f;
+}
+
+/* Pokemon liste*/
+main .pokemon-list section {
+  flex-basis: calc(33.333% - 20px);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main .pokemon-list img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+main .pokemon-list h2 a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Pokemon yper knapper*/
+#types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#types button {
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#types button:hover {
+  background-color: #b71c1c;
+}
+
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  a:hover {
-    color: #747bff;
+
+  main section {
+      flex-direction: column;
+      align-items: center;
   }
-  button {
-    background-color: #f9f9f9;
+
+  main .pokemon-list section {
+      flex-basis: 100%;
+  }
+
+  main section img {
+      width: 80px;
+      height: 80px;
   }
 }
