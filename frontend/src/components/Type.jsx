@@ -2,8 +2,8 @@ export default function Type() {
     return(
         <>
         <main>
-            <img src="" alt="" />
-            <h1>Fighting (dynamic, duh)</h1>
+        
+            <h1><img src="src/assets/img/type/fighting.png" alt="" />Fighting (dynamic, duh)</h1>
             <section>
           <img src="src\assets\img\001.png" alt="" />
           <p>#0001</p>

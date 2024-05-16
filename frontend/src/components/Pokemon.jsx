@@ -6,7 +6,6 @@ export default function Pokemon() {
                 <h1>Zapdos</h1>
                 <section>
                     <img src="src\assets\img\001.png" alt="bul" />
-                    /*doesnt work for some reason? */
                 </section>
             </section>
             <section>
