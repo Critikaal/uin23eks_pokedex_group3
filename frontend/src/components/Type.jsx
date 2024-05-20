@@ -1,95 +1,32 @@
-export default function Type() {
-    return(
-        <>
-        <main>
-        
-            <h1><img src="src/assets/img/type/fighting.png" alt="" />Fighting (dynamic, duh)</h1>
-            <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getPokemonsByType } from '../assets/api';
+
+function Type() {
+  const { type } = useParams();
+  const [pokemons, setPokemons] = useState([]);
+
+  useEffect(() => {
+    async function fetchPokemons() {
+      const data = await getPokemonsByType(type);
+      setPokemons(data);
+    }
+    fetchPokemons();
+  }, [type]);
+
+  return (
+    <>
+      <h1>
+        <img src={`src/assets/img/type/${type.toLowerCase()}.png`} alt={type} />
+        {type.charAt(0).toUpperCase() + type.slice(1)}
+      </h1>
+      {pokemons.map(pokemon => (
+        <section key={pokemon.name}>
+          <p>{pokemon.name}</p>
         </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        <section>
-          <img src="src\assets\img\001.png" alt="" />
-          <p>#0001</p>
-          <h2><a href="">Bulbasaur</a></h2>
-          <p>Grass</p>
-          <p>Poison</p>
-        </section>
-        
-        </main>
-        </>
-    )
+      ))}
+    </>
+  );
 }
+
+export default Type;
