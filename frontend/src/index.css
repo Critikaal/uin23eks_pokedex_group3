@@ -1,33 +1,35 @@
 body, h1, h2, h3, p, a, section, nav, input, button {
   margin: 0;
-  padding: 0;
+  padding: 0.5rem;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
 }
 
-/* Body and Container Styles */
+/* Body og Container Stil */
 body {
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 10px;
 }
 
-/* Navigasjon Bar Styles */
+/* Navigation Bar Stil */
 nav {
-  background-color: #d32f2f; /* Pokedex red */
+  background-color: #d32f2f; 
   width: 100%;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-left: auto; 
+  margin-right: auto; 
 }
 
 nav section {
@@ -36,7 +38,7 @@ nav section {
 }
 
 nav img {
-  width: 30px;
+  width: 30 px;
   height: 30px;
   margin-right: 10px;
 }
@@ -44,12 +46,12 @@ nav img {
 nav a {
   color: #fff;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 nav input {
-  padding: 5px;
-  border-radius: 5px;
+  padding: 7px;
+  border-radius: 7px;
   border: none;
 }
 
@@ -61,12 +63,14 @@ main {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-left: auto; 
+  margin-right: auto; 
 }
 
 main h1, main h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 main img {
@@ -80,7 +84,7 @@ main section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 main section img {
@@ -91,7 +95,8 @@ main section img {
 }
 
 main section p, main section h2, main section h3 {
-  margin: 5px 0;
+  margin: 40px;
+  padding: 0.5px;
 }
 
 main section h2 a, main section h3 a {
@@ -99,11 +104,31 @@ main section h2 a, main section h3 a {
   color: #d32f2f;
 }
 
-/* Pokemon liste*/
+/* Pokémon liste */
+main .pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 main .pokemon-list section {
   flex-basis: calc(33.333% - 20px);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+main .pokemon-list section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 10px;
 }
 
 main .pokemon-list img {
@@ -113,12 +138,42 @@ main .pokemon-list img {
   margin-bottom: 10px;
 }
 
+main .pokemon-list h2 {
+  margin: 5px 0;
+}
+
 main .pokemon-list h2 a {
   display: block;
   margin-bottom: 5px;
+  color: #d32f2f;
+  text-decoration: none;
+  font-size: 1.2em;
 }
 
-/* Pokemon yper knapper*/
+main .pokemon-list p {
+  margin: 3px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Flexbox alignment fix */
+main .pokemon-list section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+main .pokemon-list section img {
+  margin-bottom: 5px;
+}
+
+main .pokemon-list section p {
+  line-height: 1.2;
+}
+
+/* Pokémon type knapper */
 #types {
   display: flex;
   flex-wrap: wrap;
@@ -139,7 +194,6 @@ main .pokemon-list h2 a {
 #types button:hover {
   background-color: #b71c1c;
 }
-
 
 @media (max-width: 768px) {
   nav {
