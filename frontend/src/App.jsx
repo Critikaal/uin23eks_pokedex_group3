@@ -1,29 +1,26 @@
-import { Route, Routes } from 'react-router-dom'
-import Teams from './components/Teams'
-import Team from './components/Team'
-import Pokemons from './components/Pokemons'
-import Type from './components/Type'
-import Pokemon from './components/Pokemon'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import Pokemon from './components/Pokemon';
+import Pokemons from './components/Pokemons';
+import Teams from './components/Teams';
+import Team from './components/Team';
+import Type from './components/Type';
 
 function App() {
   return (
-    <>
-  <Pokemons>
+    <Router>
       <Routes>
-        <Route path='/' element={<Pokemons/>}/>
-        <Route path='/Teams' element={<Teams/>}/>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Pokemons />} />
+          <Route path="pokemon/:id" element={<Pokemon />} />
+          <Route path="teams" element={<Teams />} />
+          <Route path="team/:id" element={<Team />} />
+          <Route path="type/:type" element={<Type />} />
+        </Route>
       </Routes>
-  </Pokemons>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br />
-  <Pokemon></Pokemon>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br />
-  <Type></Type>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br />
-  <Teams></Teams>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br />
-  <Team></Team>
-  </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

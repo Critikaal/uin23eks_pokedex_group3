@@ -1,8 +1,15 @@
-body, h1, h2, h3, p, a, section, nav, input, button {
+body, h1, h2, h3, p, section, nav, input, button {
   margin: 0;
   padding: 0.5rem;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  display: flex;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 /* Body og Container Stil */
@@ -19,7 +26,6 @@ body {
 nav {
   background-color: #d32f2f; 
   width: 100%;
-  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,30 +116,35 @@ main .pokemon-list {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  
 }
 
-main .pokemon-list section {
+main .pokemon-list article {
   flex-basis: calc(33.333% - 20px);
   margin-bottom: 15px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  max-width: 300px; 
 }
 
-main .pokemon-list section {
+main .pokemon-list article {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin-bottom: 15px;
   padding: 10px;
+  
 }
 
 main .pokemon-list img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -151,25 +162,27 @@ main .pokemon-list h2 a {
 }
 
 main .pokemon-list p {
-  margin: 3px 0;
-  font-size: 0.9em;
+  margin: 0px 40px 0px 40px;
+  max-height: 15px;
   color: #555;
 }
 
 /* Flexbox alignment fix */
-main .pokemon-list section {
+main .pokemon-list article {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  
+  
 }
 
-main .pokemon-list section img {
+main .pokemon-list article img {
   margin-bottom: 5px;
 }
 
-main .pokemon-list section p {
+main .pokemon-list article p {
   line-height: 1.2;
 }
 
@@ -188,6 +201,13 @@ main .pokemon-list section p {
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
+  width: 250px;
+  transition: 0.5s;
+}
+
+#types a {
+  color: #000;
+  font-weight: bold;
   transition: 0.5s;
 }
 
@@ -312,16 +332,16 @@ main .pokemon-list section p {
       align-items: flex-start;
   }
 
-  main section {
+  main article {
       flex-direction: column;
       align-items: center;
   }
 
-  main .pokemon-list section {
+  main .pokemon-list article {
       flex-basis: 100%;
   }
 
-  main section img {
+  main article img {
       width: 80px;
       height: 80px;
   }
