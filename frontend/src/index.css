@@ -194,7 +194,7 @@ main .pokemon-list article p {
 }
 
 #types button {
-  color: #fff;
+  color: #000;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -207,6 +207,7 @@ main .pokemon-list article p {
 #types a {
   color: #000;
   font-weight: bold;
+  transition: 0.5s;
 }
 
 #typestitle {
@@ -278,6 +279,10 @@ main .pokemon-list article p {
 }
 
 /* Type Farger */
+  transition: 0.5s;
+}
+
+
 
 .normal{
   background-color: #dce1e6;
@@ -390,4 +395,25 @@ main .pokemon-list article p {
 }
 .unknown, .shadow{
   visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  main article {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  main .pokemon-list article {
+      flex-basis: 100%;
+  }
+
+  main article img {
+      width: 80px;
+      height: 80px;
+  }
 }
