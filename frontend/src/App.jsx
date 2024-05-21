@@ -6,6 +6,7 @@ import Pokemons from './components/Pokemons';
 import Teams from './components/Teams';
 import Team from './components/Team';
 import Type from './components/Type';
+import SearchResults from './components/SearchResults';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Pokemons />} />
+          <Route path="/searchresults/:query" element={<SearchResults />} />
           <Route path="pokemon/:id" element={<Pokemon />} />
           <Route path="teams" element={<Teams />} />
           <Route path="team/:id" element={<Team />} />
