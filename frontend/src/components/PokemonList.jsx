@@ -1,4 +1,3 @@
-// src/components/PokemonList.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getPokemonById, getAllPokemons, getPokemons } from '../assets/api';

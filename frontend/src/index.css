@@ -8,7 +8,6 @@ body, h1, h2, h3, p, section, nav, input, button {
 }
 
 a {
-  color: white;
   text-decoration: none;
 }
 
@@ -57,7 +56,7 @@ nav a {
 
 nav input {
   padding: 7px;
-  border-radius: 7px;
+  border-radius: 7px 0px 0px 7px;
   border: none;
 }
 
@@ -208,6 +207,78 @@ main .pokemon-list article p {
 #types a {
   color: #000;
   font-weight: bold;
+  transition: 0.5s;
+}
+
+#typestitle {
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.search{
+  display: flex;
+}
+
+.search button{
+  border-radius: 0px 5px 5px 0px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#pokemonimage {
+  display: flex;
+  justify-content:flex-start;
+  width: fit-content;
+  height: fit-content;
+  
+}
+
+#stats {
+  display: flex;
+  margin: 0;
+}
+
+#statname{
+  font-weight: bold;
+}
+
+#pokemonimage img{
+  width: max-content;
+  height: max-content ;
+  background-color: rgba(134, 176, 255, 0.582);
+  border-radius: 15px;
+  margin: 0;
+  padding: 50px;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  main article {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  main .pokemon-list article {
+      flex-basis: 100%;
+  }
+
+  main article img {
+      width: 80px;
+      height: 80px;
+  }
+}
+
+/* Type Farger */
   transition: 0.5s;
 }
 
