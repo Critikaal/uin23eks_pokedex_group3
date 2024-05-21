@@ -8,18 +8,20 @@ function TypeButtons() {
   ];
 
   return (
+    <>
+    <h1>Types</h1>
     <section id="types">
       {types.map(type => (
-        <button key={type}>
+        <button key={type} className={`${type.toLowerCase()}`}>
           <Link to={`/type/${type.toLowerCase()}`}>
-          <img src={`src/assets/img/type/${type.toLowerCase()}.png`} alt={type} />
+          <img src={`src/assets/img/${type.toLowerCase()}.png`} alt={type} />
+          <a>{type}</a>
           </Link>
-          <p>{type}</p>
-          
         </button>
         
       ))}
     </section>
+    </>
   );
 }
 

@@ -9,6 +9,7 @@ function Type() {
   useEffect(() => {
     async function fetchPokemons() {
       const data = await getPokemonsByType(type);
+      console.log(data);
       setPokemons(data);
     }
     fetchPokemons();
@@ -16,11 +17,9 @@ function Type() {
 
   return (
     <>
-      <h1>
-        <img src={`src/assets/img/type/${type.toLowerCase()}.png`} alt={type} />
-        {type.charAt(0).toUpperCase() + type.slice(1)}
-      </h1>
-      {pokemons.map(pokemon => (
+      <img src={`/src/assets/img/${type.toLocaleLowerCase()}.png`} alt={type} />
+      <h1>{type.charAt(0).toUpperCase() + type.slice(1)}</h1>
+      {pokemons.map((pokemon) => (
         <section key={pokemon.name}>
           <p>{pokemon.name}</p>
         </section>
